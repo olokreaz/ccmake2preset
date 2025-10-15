@@ -1,0 +1,13 @@
+CC = cc
+CFLAGS = -Wall -Wextra -O3
+
+all: ccmake2preset
+
+ccmake2preset: main.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+clean:
+	rm -f ccmake2preset
+
+install: ccmake2preset
+	cp ./ccmake2preset /usr/local/bin/
